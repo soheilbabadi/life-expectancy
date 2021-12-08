@@ -14,9 +14,14 @@ import java.io.Serializable;
 @Builder
 public class AnonymousResponseDto implements Serializable {
 
+
     private int age;
-    private int iX;
-    private int dx;
-    private double qx;
+    private double death;
+    private long population;
+    private double remain;
+    private double expectancy;
     private String sex;
+    private double BMI;
+    private double overWeight;
+
 }

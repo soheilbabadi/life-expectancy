@@ -7,7 +7,7 @@ import tech.salamati.lifeexpectanc.dto.DroolsResponse;
 rule "age validation"
 when
 $response:DroolsResponse();
-$request:AnonymousRequestDto(birthDate.getYear()>106 || birthDate.getYear()<0)
+$request:AnonymousRequestDto(birthDate.getYear()>120 || birthDate.getYear()<0)
 
 then
 $response.setValid(false);
@@ -24,4 +24,46 @@ then
 $response.setValid(false);
 $response.addMesage("جنسیست باید مرد یا زن تعیین شود");
 end;
+
+rule "no smoking"
+when
+
+$request:AnonymousRequestDto(dailySmoking<=0)
+
+then
+$request.setVirtualBirthDate($request.getBirthDate());
+end;
+
+rule "Smoking apply less than 5"
+when
+
+$request:AnonymousRequestDto(dailySmoking>0 && dailySmoking<=5)
+
+then
+$request.setVirtualBirthDate($request.getBirthDate().plusYears(5));
+end;
+
+rule "Smoking apply more than 5 less than 20"
+when
+$request:AnonymousRequestDto(dailySmoking>5 && dailySmoking<20)
+
+then
+$request.setVirtualBirthDate($request.getBirthDate().plusYears(10));
+end;
+
+rule "Smoking apply more than 20"
+when
+$request:AnonymousRequestDto(dailySmoking>20)
+then
+$request.setVirtualBirthDate($request.getBirthDate().plusYears(20));
+end;
+
+rule "BMI for 19 to 24"
+when
+$response:DroolsResponse();
+$request:AnonymousRequestDto(birthDate.getYear()  <24)
+then
+$response.setAge($request.getBirthDate().getYear());
+end;
+
 

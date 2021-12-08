@@ -5,4 +5,7 @@ import tech.salamati.lifeexpectanc.dto.AnonymousResponseDto;
 
 public interface ExpectanceService {
     AnonymousResponseDto anonymousResponse(AnonymousRequestDto dto);
+    double getBmi(AnonymousRequestDto dto);
+    String getOverweight(AnonymousRequestDto dto);
+
 }

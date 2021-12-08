@@ -9,7 +9,7 @@ import tech.salamati.lifeexpectanc.helper.ApiResultImp;
 import tech.salamati.lifeexpectanc.service.ExpectanceService;
 
 @RestController
-@RequestMapping(path = "expectancy",name="life ExpectancyController anonymous")
+@RequestMapping(path = "/api/expectancy",name="life ExpectancyController anonymous")
 public class ExpectedController {
 
     private ApiResultImp _apiResult=new ApiResultImp() ;
