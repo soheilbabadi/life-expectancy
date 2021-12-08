@@ -1,0 +1,27 @@
+package tech.salamati.lifeexpectanc;
+import tech.salamati.lifeexpectanc.model.Expectance;
+import tech.salamati.lifeexpectanc.dto.AnonymousRequestDto;
+import tech.salamati.lifeexpectanc.dto.DroolsResponse;
+
+
+rule "age validation"
+when
+$response:DroolsResponse();
+$request:AnonymousRequestDto(birthDate.getYear()>106 || birthDate.getYear()<0)
+
+then
+$response.setValid(false);
+$response.addMesage("سن باید بین صفر تا یکصد و شش سال باشد");
+end;
+
+
+rule "sex validation"
+when
+$response:DroolsResponse();
+$request:AnonymousRequestDto(sex!="m" && sex!="f")
+
+then
+$response.setValid(false);
+$response.addMesage("جنسیست باید مرد یا زن تعیین شود");
+end;
+
