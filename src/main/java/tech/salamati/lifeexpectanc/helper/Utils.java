@@ -1,6 +1,7 @@
 package tech.salamati.lifeexpectanc.helper;
 
 
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -14,7 +15,7 @@ public class Utils {
     public static String getUUID() {
         try {
             MessageDigest salt = MessageDigest.getInstance("SHA-256");
-            salt.update(UUID.randomUUID().toString().getBytes("UTF-8"));
+            salt.update(UUID.randomUUID().toString().getBytes(StandardCharsets.UTF_8));
             String digest = bytesToHex(salt.digest());
             return digest;
         } catch (Exception ex) {

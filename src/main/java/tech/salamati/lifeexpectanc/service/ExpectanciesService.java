@@ -6,9 +6,12 @@ import tech.salamati.lifeexpectanc.exception.RequestNotMacheException;
 
 import java.time.LocalDate;
 
-public interface ExpectanceService {
+public interface ExpectanciesService {
     AnonymousResponseDto anonymousResponse(AnonymousRequestDto dto) throws RequestNotMacheException;
+
     double getBmi(AnonymousRequestDto dto);
+
     String getOverweight(AnonymousRequestDto dto);
+
     int getAge(LocalDate date);
 }

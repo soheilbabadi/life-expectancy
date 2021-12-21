@@ -7,8 +7,8 @@ import tech.salamati.lifeexpectanc.model.Expectance;
 import java.util.Optional;
 
 @Repository
-public interface ExpectanceRepo extends CrudRepository<Expectance,Long> {
+public interface ExpectanceRepo extends CrudRepository<Expectance, Long> {
 
-    Optional<Expectance> findByAgeAndSex(int age,String sex);
+    Optional<Expectance> findByAgeAndSex(int age, String sex);
 
 }

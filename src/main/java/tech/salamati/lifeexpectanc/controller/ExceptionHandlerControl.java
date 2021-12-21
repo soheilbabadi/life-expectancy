@@ -10,7 +10,7 @@ import tech.salamati.lifeexpectanc.helper.ApiResultImp;
 @ControllerAdvice
 public class ExceptionHandlerControl extends ResponseEntityExceptionHandler {
     @ExceptionHandler(value = {RequestNotMacheException.class})
-    public ApiResultImp handleInvalidRequestException(RequestNotMacheException exception, WebRequest request){
+    public ApiResultImp handleInvalidRequestException(RequestNotMacheException exception, WebRequest request) {
         return new ApiResultImp().fatalError(exception);
     }
 }

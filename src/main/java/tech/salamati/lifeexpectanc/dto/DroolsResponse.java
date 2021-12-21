@@ -14,16 +14,16 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class DroolsResponse implements Serializable {
-    private boolean valid=true;
-    private List<String> resultMessage=new ArrayList<>();
+    private boolean valid = true;
+    private List<String> resultMessage = new ArrayList<>();
     private int age;
     private double death;
     private double BMI;
     private double overWeight;
 
     public void addMesage(String message) {
-        if(this.resultMessage.isEmpty()){
-            this.resultMessage=new ArrayList<>();
+        if (this.resultMessage.isEmpty()) {
+            this.resultMessage = new ArrayList<>();
         }
         this.resultMessage.add(message);
     }

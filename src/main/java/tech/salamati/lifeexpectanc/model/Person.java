@@ -34,5 +34,4 @@ public class Person implements Serializable {
     private int smokingDaily;
 
 
-
 }

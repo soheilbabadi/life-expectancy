@@ -19,11 +19,11 @@ public class AnonymousRequestDto implements Serializable {
     private LocalDate virtualBirthDate;
     private String sex;
 
-    @Range(min = 0,max = 40,message = "مقدار سیگار روزانه عدد درستی نیست")
+    @Range(min = 0, max = 40, message = "مقدار سیگار روزانه عدد درستی نیست")
     private int dailySmoking;
-    @Range(min = 3,max = 200,message = "وزن مقدار درستی نیست")
+    @Range(min = 3, max = 200, message = "وزن مقدار درستی نیست")
     private int weight;
-    @Range(min = 50,max = 250,message = "قد مقدار درستی نیست")
+    @Range(min = 50, max = 250, message = "قد مقدار درستی نیست")
     private int height;
 
 }
